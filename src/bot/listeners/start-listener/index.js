@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const signInListener = async (bot) => {
+const startListener = async (bot) => {
   bot.on('callback_query', async (ctx, next) => {
     try {
       const {
@@ -21,4 +21,4 @@ const signInListener = async (bot) => {
   });
 };
 
-module.exports = { signInListener };
+module.exports = { startListener };

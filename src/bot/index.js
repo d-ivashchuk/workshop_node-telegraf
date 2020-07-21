@@ -6,7 +6,7 @@ const logger = require('pino')();
 
 const { startCommand, statsCommand, locationCommand } = require('./commands');
 const {
-  signInListener,
+  startListener,
   locationListener,
   updateHandlerListener,
 } = require('./listeners');
@@ -28,6 +28,10 @@ const session = new RedisSession({
 const init = async (bot) => {
   //!middleware
   bot.use(session);
+  // bot.use((ctx, next) => {
+  //   ctx.reply(`Echo: ${ctx.update.message.text}`);
+  //   next();
+  // }); //TODO: first exercise middleware challenge
   bot.use(cbQueryMiddleware);
   bot.use(rateLimit(limitConfig));
   bot.use(stage.middleware());
@@ -41,15 +45,18 @@ const init = async (bot) => {
       description: 'Share your location with tweetastic',
     },
     { command: '/settings', description: 'Define your notification settings' },
+    { command: '/me', description: 'Me is the command' },
   ]);
 
   //!listeners
-  signInListener(bot);
+  startListener(bot);
   locationListener(bot);
   updateHandlerListener(bot);
 
   //!commands
   bot.command('start', startCommand());
+  bot.command('me', (ctx) => ctx.reply(ctx.update.message.from.id)); //TODO: second exercise
+  bot.command('session', (ctx) => ctx.reply(ctx.session.twitterHandler)); //TODO: third exercise :: execute the command in a imported, structured way
   bot.command('stats', statsCommand());
   bot.command('settings', settingsMenuMiddleware.replyMenuMiddleware());
   bot.command('location', locationCommand());

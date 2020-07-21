@@ -1,8 +1,8 @@
-const { signInListener } = require('./sign-in-listener');
+const { startListener } = require('./start-listener');
 const { locationListener } = require('./location-listener');
 const { updateHandlerListener } = require('./update-handler-listener');
 module.exports = {
-  signInListener,
+  startListener,
   locationListener,
   updateHandlerListener,
 };
