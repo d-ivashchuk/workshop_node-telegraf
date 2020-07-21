@@ -7,22 +7,22 @@ Here goes everything you need to know:
 
 ### Specific knowledge
 
-- Telegram docs
-- Telegraf.js docs
+- Telegram docs (link)
+- Telegraf.js docs (link)
 
 ### Egghead videos and courses
 
-- Intro to node or express
-- Twitter app and tokens
-- Telegram bot token
-- install Docker, docker-compose, redis
+- Intro to node or express (link)
+- Twitter app and tokens (link)
+- Telegram bot token (link)
+- install Docker, docker-compose, redis (link)
 
 ### Steps to do
 
 1. Pull code of this repo
 2. Install node.js
-3. Grab tokens and secrets of twitter app from twitter for developers(link) put them into `.env` -video-
-4. Create a new bot in Bot Father (link), get the bot token and put it into `.env` -video-
+3. Grab tokens and secrets of twitter app from twitter for developers(link) put them into `.env` (link)
+4. Create a new bot in Bot Father (link), get the bot token and put it into `.env` (link)
 5. Instal dependencies with `yarn install` or `npm install`
 6. Run server launch script with `npm run dev` or `yarn run dev`
 7. Open bot and run `test` or `start` commands to verify it is running
