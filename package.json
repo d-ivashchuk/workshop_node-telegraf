@@ -9,7 +9,7 @@
     "express": "^4.17.1",
     "geo-tz": "^6.0.0",
     "ioredis": "^4.17.3",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.31",
     "nodemon": "^2.0.4",
     "numbro": "^2.3.1",
